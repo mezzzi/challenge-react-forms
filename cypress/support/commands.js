@@ -9,8 +9,40 @@
 // ***********************************************
 //
 //
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+// -- utility command to submit a person to a signup form --
+// -- This doesn't necessarily have to be a command --
+Cypress.Commands.add('enterPerson', person => {
+  cy.get('input[name="name"]')
+    .clear()
+    .type(person.name)
+    .invoke('val')
+    .should('equal', person.name)
+  cy.get('input[name="email"]')
+    .clear()
+    .type(person.email)
+    .invoke('val')
+    .should('equal', person.email)
+  cy.get('input[name="age"]')
+    .clear()
+    .type(person.age)
+    .invoke('val')
+    .should('equal', String(person.age))
+  cy.get('input[name="phoneNumber"]')
+    .clear()
+    .type(person.phoneNumber)
+    .invoke('val')
+    .should('equal', person.phoneNumber)
+  cy.get('input[name="password"]')
+    .clear()
+    .type(person.password)
+    .invoke('val')
+    .should('equal', person.password)
+  cy.get('input[name="homepage"]')
+    .clear()
+    .type(person.homepage)
+    .invoke('val')
+    .should('equal', person.homepage)
+})
 //
 //
 // -- This is a child command --

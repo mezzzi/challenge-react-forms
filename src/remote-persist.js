@@ -102,7 +102,7 @@ module.exports = class extends React.Component {
 
   renderForm () {
     return (
-      <div>
+      <div id='signup-wrapper'>
         <h1>Sign Up</h1>
 
         <form onSubmit={this.onFormSubmit}>
@@ -194,7 +194,7 @@ module.exports = class extends React.Component {
 
   renderList() {
     return (
-      <div>
+      <div id='people-wrapper'>
         <h1>People</h1>
 
         <div>
